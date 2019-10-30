@@ -1,15 +1,9 @@
 from flask import Flask
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route("/")
+@app.route("/")
 def hello():
-    id_file = open("id.txt", "r")
-    id = id_file.read()
-    id_file.close()
-    new_id = int(id) + 1
-    id_file = open("id.txt", "w")
-    id_file.write(str(new_id))
-    return id
+    return "Hello World!"
 
 if __name__ == "__main__":
-    application.run()
+    app.run()
